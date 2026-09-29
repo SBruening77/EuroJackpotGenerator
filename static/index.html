@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eurojackpot-Tipp</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">5 aus 50 und 2 aus 12</p>
+      <h1>Eurojackpot-Tipp</h1>
+      <p class="lede">Fünf Zahlen von 1 bis 50 und zwei Eurozahlen von 1 bis 12, ermittelt aus den Ziehungen seit dem 25.03.2022.</p>
+    </header>
+
+    <section class="notice">
+      <p>Jede gültige Kombination hat die Chance <strong id="odds-banner">1 : 139.838.160</strong> auf den Jackpot. Die Häufigkeit vergangener Ziehungen lässt die nächste Ziehung unverändert. Der Jackpot ist auf 120 Mio. € begrenzt.</p>
+      <p>Eurojackpot hat keine Superzahl. Angekreuzt werden fünf Zahlen und zwei Eurozahlen.</p>
+    </section>
+
+    <section class="toolbar">
+      <button type="button" id="refresh" class="primary">Ziehungen aktualisieren</button>
+      <p id="status-line">Ziehungen werden geprüft …</p>
+      <div class="bar" id="bar" hidden>
+        <div id="bar-fill"></div>
+      </div>
+    </section>
+
+    <p class="error" id="error" hidden></p>
+
+    <section class="cards">
+      <article class="card">
+        <h2>Letzte Ziehung</h2>
+        <p class="date" id="latest-date">—</p>
+        <div class="balls" id="latest-balls"></div>
+        <p class="meta" id="latest-jackpot"></p>
+      </article>
+      <article class="card jackpot-card">
+        <h2>Nächste Ziehung</h2>
+        <p class="date" id="next-date">—</p>
+        <p class="amount" id="next-amount">—</p>
+        <p class="meta">Obergrenze 120.000.000 €</p>
+      </article>
+    </section>
+
+    <section class="tip-row">
+    <section class="card tip-card">
+      <h2>Schein zum Ankreuzen</h2>
+      <div class="methods" role="group" aria-label="Tipp-Verfahren">
+        <button type="button" class="method active" data-method="frequency" aria-pressed="true">Häufig</button>
+        <button type="button" class="method" data-method="overdue" aria-pressed="false">Lange nicht gezogen</button>
+        <button type="button" class="method" data-method="random" aria-pressed="false">Zufall</button>
+      </div>
+      <p class="method-label" id="method-label">Verfahren: Häufig</p>
+      <div class="balls tip-balls" id="tip-balls"></div>
+      <p id="tip-note"></p>
+      <p class="meta" id="tip-meta"></p>
+      <button type="button" id="generate" class="primary">Tipp erzeugen</button>
+    </section>
+
+    <aside class="card price-aside" id="cost-card">
+      <p class="cost-line">Preis pro Feld</p>
+      <p class="price-field" id="cost-stake">—</p>
+      <p class="cost-line">Gesamtsumme der aktuellen Ziehung</p>
+      <p class="amount" id="cost-amount">—</p>
+      <p class="meta" id="cost-hint"></p>
+    </aside>
+    </section>
+
+    <section class="card">
+      <h2>Häufigkeit seit dem 25.03.2022</h2>
+      <h3>Zahlen 1–50</h3>
+      <div class="freq" id="main-freq"></div>
+      <h3>Eurozahlen 1–12</h3>
+      <div class="freq euro-freq" id="euro-freq"></div>
+    </section>
+
+    <section class="card">
+      <h2>Letzte Ziehungen</h2>
+      <div id="recent"></div>
+    </section>
+
+    <footer>
+      <p>Quelle: WestLotto, Zahlen und Quoten, Spielart Eurojackpot.</p>
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
